@@ -20,15 +20,6 @@ The node appears under category: text/utils with the name: “Numbered Multiline
 
 ---
 
-### Usage
-Add the “Numbered Multiline Text” node.
-
-Type in the text field (multiline). Numbering is applied when the graph runs.
-
-Set selected_line to the line to extract (1-based).
-
----
-
 ### Example
 
 <img width="877" height="488" alt="image" src="https://github.com/user-attachments/assets/5145db71-27b8-4357-836f-64819606f69b" />
