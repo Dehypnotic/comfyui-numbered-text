@@ -87,8 +87,6 @@ This is a test
 
 selected_line: 2
 
----
-
 ### Outputs:
 
 selected_text: “There”
