@@ -7,7 +7,7 @@ Pick a line via 1-based index and output only that line’s content (without the
 
 Read-only “gutter”-style preview with line numbers on the left, intended for display nodes
 
-<img width="498" height="290" alt="image" src="https://github.com/user-attachments/assets/a2be26e3-df46-440b-87d9-15baea145151" />
+<img width="455" height="269" alt="image" src="https://github.com/user-attachments/assets/afd66622-9a1a-47a7-99f7-7954ea3f0260" />
 
 ---
 
@@ -22,7 +22,7 @@ The node appears under category: text/utils with the name: “Numbered Multiline
 
 ### Example
 
-<img width="877" height="488" alt="image" src="https://github.com/user-attachments/assets/5145db71-27b8-4357-836f-64819606f69b" />
+<img width="848" height="476" alt="image" src="https://github.com/user-attachments/assets/a62407a7-6cbc-4fbc-88b8-26f0ffa5e80b" />
 
 ---
 
