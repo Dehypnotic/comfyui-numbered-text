@@ -26,14 +26,5 @@ The node appears under category: text/utils with the name: “Numbered Multiline
 
 ---
 
-### Customization
-Change default text: set the input default to “” if you don’t want to start with “1. ”.
-
-Skip blank lines in numbering: adjust _renumber to filter empty lines before numbering.
-
-Also return the line index: add an extra INT output passing through selected_line.
-
----
-
 ### License
 MIT License. Feel free to modify; please keep attribution.
