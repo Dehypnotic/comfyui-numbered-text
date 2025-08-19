@@ -94,13 +94,6 @@ This is a test
 
 ---
 
-### Design choices and limitations
-Numbering happens server-side when the graph evaluates, not live inside the input field. ComfyUI custom nodes can’t modify frontend behavior without a small JS extension.
-
-numbered_preview is meant for display nodes and updates on run. For true live line numbers inside the input, a frontend module (JS/CSS) is required.
-
----
-
 ### Customization
 Change default text: set the input default to “” if you don’t want to start with “1. ”.
 
