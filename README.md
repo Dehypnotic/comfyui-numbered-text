@@ -7,7 +7,8 @@ Pick a line via 1-based index and output only that line’s content (without the
 
 Read-only “gutter”-style preview with line numbers on the left, intended for display nodes
 
-<img width="455" height="269" alt="image" src="https://github.com/user-attachments/assets/afd66622-9a1a-47a7-99f7-7954ea3f0260" />
+<img width="460" height="261" alt="image" src="https://github.com/user-attachments/assets/69f1cdfa-2983-4da3-99f3-0a13a20be010" />
+
 
 ---
 
