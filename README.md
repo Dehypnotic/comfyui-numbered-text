@@ -7,23 +7,12 @@ Pick a line via 1-based index and output only that line’s content (without the
 
 Read-only “gutter”-style preview with line numbers on the left, intended for display nodes
 
----
-
-### Contents
-numbered_text_node/
-
-numbered_text_node.py
-
-init.py
-
-README.md
+<img width="498" height="290" alt="image" src="https://github.com/user-attachments/assets/a2be26e3-df46-440b-87d9-15baea145151" />
 
 ---
 
 ### Installation
-Copy the numbered_text_node folder to:
-
-ComfyUI/custom_nodes/numbered_text_node/
+Copy the numbered_text_node folder to ComfyUI/custom_nodes/
 
 Restart ComfyUI.
 
@@ -31,41 +20,12 @@ The node appears under category: text/utils with the name: “Numbered Multiline
 
 ---
 
-
-
-
 ### Usage
 Add the “Numbered Multiline Text” node.
 
 Type in the text field (multiline). Numbering is applied when the graph runs.
 
 Set selected_line to the line to extract (1-based).
-
----
-
-### Inputs
-text (STRING, multiline)
-
-The text itself. No numbers needed; the node numbers on execution.
-
-selected_line (INT)
-
-1-based line index to extract. Out-of-range values return an empty string.
-
-preview_max_lines (INT)
-
-How many lines to show in the preview (default 50).
-
----
-
-### Outputs
-selected_text (STRING)
-
-Only the content of the selected line, without the “n. ” prefix and trimmed.
-
-numbered_preview (STRING)
-
-Read-only preview with a left line-number column: “ 1│text”, “ 2│text”, …
 
 ---
 
