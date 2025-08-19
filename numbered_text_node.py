@@ -34,10 +34,10 @@ def _make_numbered_preview(text_numbered: str, max_lines: int = 50) -> str:
     for i, ln in enumerate(lines, start=1):
         num = str(i).rjust(width)
         content = _strip_prefix(ln)
-        preview.append(f"{num}│{content}")
+        preview.append(f"{num}. {content}")
     return "\n".join(preview)
 
-class NumberedMultilineText:
+class NumberedText:
     @classmethod
     def INPUT_TYPES(cls):
         return {
@@ -45,7 +45,7 @@ class NumberedMultilineText:
                 "text": ("STRING", {
                     "multiline": True,
                     "default": "1. ",
-                    "placeholder": "Skriv tekst. Nummereres ved kjøring.",
+                    "placeholder": "Write text. Each line is numbered when run.",
                 }),
                 "selected_line": ("INT", {
                     "default": 1, "min": 1, "max": 1_000_000, "step": 1,
@@ -68,9 +68,9 @@ class NumberedMultilineText:
         return (selected, preview)
 
 NODE_CLASS_MAPPINGS = {
-    "NumberedMultilineText": NumberedMultilineText,
+    "NumberedText": NumberedText,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "NumberedMultilineText": "Numbered Multiline Text",
+    "NumberedText": "Numbered Text",
 }
