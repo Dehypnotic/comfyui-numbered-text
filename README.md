@@ -40,16 +40,6 @@ Set selected_line to the line to extract (1-based).
 
 ---
 
-### Connect:
-
-selected_text to downstream nodes that expect a plain string.
-
-numbered_preview to a display node (e.g., “Show Text”/“Print Text”) to see numbered lines in a left column.
-
-Tip: Place the display node visually next to this node for a “gutter” feel.
-
----
-
 ### Inputs
 text (STRING, multiline)
 
@@ -77,7 +67,8 @@ Read-only preview with a left line-number column: “ 1│text”, “ 2│text�
 ---
 
 ### Example
-text:
+
+#### text:
 
 Hello
 
@@ -85,21 +76,21 @@ There
 
 This is a test
 
-selected_line: 2
+#### selected_line: 2
 
 ### Outputs:
 
-selected_text: “There”
+#### selected_text: 
 
-numbered_preview:
+“There”
 
-“1│Hello”
+#### numbered_preview:
 
-“2│There”
+“1. Hello”
 
-“3│This is a test”
+“2. There”
 
-(Render this nicely with a text display node.)
+“3. This is a test”
 
 ---
 
