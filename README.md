@@ -31,6 +31,9 @@ The node appears under category: text/utils with the name: “Numbered Multiline
 
 ---
 
+
+
+
 ### Usage
 Add the “Numbered Multiline Text” node.
 
@@ -68,29 +71,7 @@ Read-only preview with a left line-number column: “ 1│text”, “ 2│text�
 
 ### Example
 
-#### text:
-
-Hello
-
-There
-
-This is a test
-
-#### selected_line: 2
-
-### Outputs:
-
-#### selected_text: 
-
-“There”
-
-#### numbered_preview:
-
-“1. Hello”
-
-“2. There”
-
-“3. This is a test”
+<img width="877" height="488" alt="image" src="https://github.com/user-attachments/assets/5145db71-27b8-4357-836f-64819606f69b" />
 
 ---
 
