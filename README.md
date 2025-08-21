@@ -3,7 +3,7 @@ Simple node for handling multi-line text with automatic numbering and extracting
 
 A new text division is created for every Return (CR).
 
-Pick a text divison via the index and output only that text’s content (without the optional “n. ” prefix). Alternatively select several text divisions, seperated by the separator.
+Pick a text divison via the index and output only that text’s content (without the optional “n. ” prefix). Alternatively select several text divisions and an optional separator.
 
 
 
