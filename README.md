@@ -37,7 +37,7 @@ The node appears under category: text/utils with the name: “Numbered Text”.
 ### Outputs
 
 - String of selected text division(s).
-- String of the whole text, numbered and limited by the max value
+- String of the whole text, numbered and limited by the max value.
 
 ---
 
