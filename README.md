@@ -16,7 +16,7 @@ Copy the node folder to ComfyUI/custom_nodes/
 
 Restart ComfyUI.
 
-The node appears under category: text/utils with the name: “Numbered Multiline Text”.
+The node appears under category: text/utils with the name: “Numbered Text”.
 
 ---
 
