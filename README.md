@@ -3,12 +3,27 @@ Simple node for handling multi-line text with automatic numbering and extracting
 
 A new text division is created for every Return (CR).
 
-Pick a text via the index and output only that text’s content (without the optional “n. ” prefix). Alternatively select several texts with separator.
+Pick a text divison via the index and output only that text’s content (without the optional “n. ” prefix). Alternatively select several text divisions, seperated by the separator.
 
-Output for the whole text of text divisions, numbered and limited by the max value.
+
 
 <img width="604" height="454" alt="image" src="https://github.com/user-attachments/assets/8bbd5670-3355-4150-89e3-5320e45b5bbd" />
 
+---
+
+### Inputs
+- String of the whole text.
+- Integer of selected text.
+- String of comma separated text divisions.
+- String of optional separator.
+- Integer of max text divisions for the numbered text output.
+
+### Outputs
+
+- String of selected text division(s).
+- String value of the whole text.
+
+Output for the whole text of text divisions, numbered and limited by the max value.
 ---
 
 ### Installation
