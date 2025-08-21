@@ -25,7 +25,7 @@ git clone https://github.com/dehypnotic/comfyui-numbered-text.git
 
 Restart ComfyUI.
 
-The node appears under category: text/utils with the name: “Numbered Text”.
+Double-click and search for “Numbered Text”.
 
 ---
 
