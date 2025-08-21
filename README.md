@@ -29,7 +29,7 @@ The node appears under category: text/utils with the name: “Numbered Text”.
 
 ### Inputs
 - String of the whole text.
-- Integer of selected text.
+- Integer of selected text division.
 - String of comma separated text divisions.
 - String of optional separator.
 - Integer of max text divisions for the numbered text output.
