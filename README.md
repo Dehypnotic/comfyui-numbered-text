@@ -20,7 +20,7 @@ The node appears under category: text/utils with the name: “Numbered Text”.
 
 ---
 
-### Example
+### Examples
 
 <img width="998" height="434" alt="image" src="https://github.com/user-attachments/assets/2e075ca1-e887-47ac-8558-c7e2f4e87553" />
 
