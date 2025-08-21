@@ -21,9 +21,8 @@ Pick a text divison via the index and output only that text’s content (without
 ### Outputs
 
 - String of selected text division(s).
-- String value of the whole text.
+- String of the whole text, numbered and limited by the max value
 
-Output for the whole text of text divisions, numbered and limited by the max value.
 ---
 
 ### Installation
