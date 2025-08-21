@@ -11,13 +11,13 @@ Pick a text divison via the index and output only that text’s content (without
 
 ---
 
-### Usage ideas
+## Usage ideas
 I find it useful for prompts. You get a new idea, hit enter and start anew without discarding the old; select, go back, combine; or you can load/paste a list of frequently used prompts and save/copy them for later. May also be useful in combination with a save node for several disk locations, etc.
 
 ---
 
-### Installation
-Copy the folder to ComfyUI/custom_nodes/
+## Installation
+### 1. Copy the folder to ComfyUI/custom_nodes/
 
 ```bashcd
 git clone https://github.com/dehypnotic/comfyui-numbered-text.git
@@ -26,6 +26,15 @@ git clone https://github.com/dehypnotic/comfyui-numbered-text.git
 Restart ComfyUI.
 
 Double-click and search for “Numbered Text”.
+
+### 2. Installation via ComfyUI Manager
+> ⚠ Note: Installing via Manager requires that your `security_level` in `config.ini` is set to `weak` (default is `high`), due to external URL restrictions.
+
+1. Set `security_level = weak` in `ComfyUI\user\default\ComfyUI-Manager\config.ini`
+2. Open ComfyUI Manager → Install from URL
+3. Paste the repository URL:  
+   `https://github.com/Dehypnotic/comfyui-range-to-string.git`
+4. Press **Install** and restart ComfyUI if necessary.
 
 ---
 
