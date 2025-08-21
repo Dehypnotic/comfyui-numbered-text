@@ -3,7 +3,7 @@ Node for handling text with automatic numbering of divisions and extraction of s
 
 A new text division is created for every Return (CR).
 
-Pick a text divison via the index and output only that text’s content (without the optional “n. ” prefix). Alternatively select several text divisions and an optional separator.
+Pick a text divison via the index and output only that text’s content (without the optional “n. ” prefix). Alternatively select several text divisions and an optional separator string.
 
 ---
 
