@@ -12,7 +12,7 @@ Pick a text divison via the index and output only that text’s content (without
 ---
 
 ### Usage ideas
-I find it useful for prompts. You get a new idea, hit enter and start anew without discarding the old, select, go back, combine. Or you can load/paste a list of frequently used prompts and save/copy them for later use. May also be useful in combination with a save node for several disk locations, etc.
+I find it useful for prompts. You get a new idea, hit enter and start anew without discarding the old, select, go back, combine; or you can load/paste a list of frequently used prompts and save/copy them for later use. May also be useful in combination with a save node for several disk locations, etc.
 
 ---
 
