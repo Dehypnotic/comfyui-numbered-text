@@ -1,5 +1,5 @@
 # Numbered Text (ComfyUI custom node)
-Simple node for handling multi-line text with automatic text numbering and extracting a selected text.
+Simple node for handling multi-line text with automatic numbering and extracting a selected text.
 
 A new text is created for every Return (CR).
 
