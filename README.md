@@ -12,7 +12,7 @@ Read-only “gutter”-style preview with line numbers on the left, intended for
 ---
 
 ### Installation
-Copy the numbered_text_node folder to ComfyUI/custom_nodes/
+Copy the node folder to ComfyUI/custom_nodes/
 
 Restart ComfyUI.
 
