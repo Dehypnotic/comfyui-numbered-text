@@ -20,6 +20,7 @@ I find it useful for prompts. You get a new idea, hit enter and start anew witho
 Copy the node folder to ComfyUI/custom_nodes/
 
 git clone https://github.com/dehypnotic/comfyui-numbered-text.git
+   ```bashcd
 
 Restart ComfyUI.
 
