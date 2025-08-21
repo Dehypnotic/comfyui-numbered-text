@@ -5,7 +5,9 @@ A new text division is created for every Return (CR).
 
 Pick a text divison via the index and output only that text’s content (without the optional “n. ” prefix). Alternatively select several text divisions and an optional separator string. Empty lines are ignored.
 
-Lightweight, no additional dependencies
+Lightweight, no additional dependencies.
+
+1-based indexing.
 
 ---
 
