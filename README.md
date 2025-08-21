@@ -3,7 +3,7 @@ Simple node for handling multi-line text with automatic numbering and extracting
 
 A new text is created for every Return (CR).
 
-Pick a text via 1-based index and output only that line’s content (without the “n. ” prefix). Alternatively select several texts with separator.
+Pick a text via the index and output only that text’s content (without the optional “n. ” prefix). Alternatively select several texts with separator.
 
 Output for all numbered texts, limited by max value.
 
