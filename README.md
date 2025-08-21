@@ -1,11 +1,11 @@
 # Numbered Text (ComfyUI custom node)
-Simple node for handling multi-line text with automatic line numbering and extracting a selected line.
+Simple node for handling multi-line text with automatic text numbering and extracting a selected text.
 
-Always auto-numbers lines (1., 2., 3., …)
+A new text is created for every Return (CR).
 
-Pick a line via 1-based index and output only that line’s content (without the “n. ” prefix)
+Pick a text via 1-based index and output only that line’s content (without the “n. ” prefix). Alternatively select several texts with separator.
 
-Read-only “gutter”-style preview with line numbers on the left, intended for display nodes
+Output for all numbered texts, limited by max value.
 
 <img width="604" height="454" alt="image" src="https://github.com/user-attachments/assets/8bbd5670-3355-4150-89e3-5320e45b5bbd" />
 
