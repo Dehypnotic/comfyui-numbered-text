@@ -42,8 +42,9 @@ Double-click and search for “Numbered Text”.
 
 ### Examples
 
-<img width="1010" height="429" alt="image" src="https://github.com/user-attachments/assets/d0a75868-f6d1-4fb6-b6f0-0bd8764370ce" />
-<img width="998" height="434" alt="image" src="https://github.com/user-attachments/assets/2e075ca1-e887-47ac-8558-c7e2f4e87553" />
+<img width="949" height="409" alt="image" src="https://github.com/user-attachments/assets/989151bf-156a-4fae-8309-c7d536f3e6af" />
+<img width="949" height="402" alt="image" src="https://github.com/user-attachments/assets/96545fa3-cf4d-4119-b720-9fb9d4219f3b" />
+
 
 ---
 
