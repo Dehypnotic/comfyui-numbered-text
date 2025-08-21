@@ -8,11 +8,25 @@ def _norm(s: str) -> str:
 def _strip_prefix(line: str) -> str:
     return re.sub(r'^\s*\d+\.\s*', '', line)
 
+_blank_pref_re = re.compile(r'^\s*\d+\.\s*$')  # "  3.  " regnes som blank
+
+def _is_blank_after_strip_pref(line: str) -> bool:
+    raw = line.strip()
+    if not raw:
+        return True
+    if _blank_pref_re.match(raw):
+        return True
+    return len(_strip_prefix(line).strip()) == 0
+
+def _filter_nonblank_lines_preserve_order(lines: List[str]) -> List[str]:
+    return [ln for ln in lines if not _is_blank_after_strip_pref(ln)]
+
 def _renumber(text: str) -> str:
     lines = _norm(text).split("\n")
+    lines = _filter_nonblank_lines_preserve_order(lines)
     out = []
     for i, ln in enumerate(lines, start=1):
-        out.append(f"{i}. {_strip_prefix(ln)}")
+        out.append(f"{i}. {_strip_prefix(ln).strip()}")
     return "\n".join(out)
 
 def _get_line_from_numbered(text_numbered: str, idx: int) -> str:
@@ -59,7 +73,7 @@ class NumberedText:
                 "text": ("STRING", {
                     "multiline": True,
                     "default": "1. ",
-                    "placeholder": "Write text. Lines are numbered on run.",
+                    "placeholder": "Write text. Text divisions are numbered on run.",
                 }),
                 "selected_text": ("INT", {
                     "default": 1, "min": 1, "max": 1_000_000, "step": 1,
@@ -70,7 +84,7 @@ class NumberedText:
                 }),
                 "join_separator": ("STRING", {
                     "default": "\n",
-                    "placeholder": "Separator when multiple lines are selected",
+                    "placeholder": "Separator when multiple divisions are selected",
                 }),
                 "max_numbered_texts": ("INT", {
                     "default": 50, "min": 1, "max": 500, "step": 1,
@@ -84,7 +98,7 @@ class NumberedText:
     CATEGORY = "text/utils"
 
     def run(self, text: str, selected_text: int, selected_texts: str, join_separator: str, max_numbered_texts: int) -> Tuple[str, str]:
-        numbered = _renumber(text)
+        numbered = _renumber(text)  # nå uten blanke divisions
 
         if selected_texts.strip():
             indices = _parse_index_list(selected_texts)
