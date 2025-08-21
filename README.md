@@ -1,11 +1,11 @@
 # Numbered Text (ComfyUI custom node)
 Simple node for handling multi-line text with automatic numbering and extracting a selected text.
 
-A new text is created for every Return (CR).
+A new text division is created for every Return (CR).
 
 Pick a text via the index and output only that text’s content (without the optional “n. ” prefix). Alternatively select several texts with separator.
 
-Output for all numbered texts, limited by max value.
+Output for the whole text of text divisions, numbered and limited by the max value.
 
 <img width="604" height="454" alt="image" src="https://github.com/user-attachments/assets/8bbd5670-3355-4150-89e3-5320e45b5bbd" />
 
