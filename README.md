@@ -24,6 +24,7 @@ I find it useful for prompts. You get a new idea, hit enter and start anew witho
 ### 1. Copy the folder to ComfyUI/custom_nodes/
 
 ```bashcd
+cd ComfyUI/custom_nodes/
 git clone https://github.com/dehypnotic/comfyui-numbered-text.git
 ```
 
