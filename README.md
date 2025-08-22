@@ -27,7 +27,7 @@ I find it useful for prompts. You get a new idea, hit enter and start anew witho
 2. Search for **NumberedText**.
 3. Press **Install** and restart ComfyUI.
 
-### 2. Copy the folder to ComfyUI/custom_nodes/
+### 2. Copy or clone the folder to ComfyUI/custom_nodes/
 
 ```bashcd
 cd ComfyUI/custom_nodes/
