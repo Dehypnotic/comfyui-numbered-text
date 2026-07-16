@@ -322,6 +322,7 @@ app.registerExtension({
                   const buttonContainer = document.createElement("div");
                   buttonContainer.style.display = "flex";
                   buttonContainer.style.flexDirection = "row";
+                  buttonContainer.style.flexWrap = "wrap";
                   buttonContainer.style.justifyContent = "space-between";
                   buttonContainer.style.padding = "5px";
                   buttonContainer.style.gap = "4px";
@@ -341,14 +342,15 @@ app.registerExtension({
                   
                   const domWidget = node.addDOMWidget("custom_numbered_text", "custom_ui", parentContainer);
                   domWidget.computeSize = function() {
-                      // Keep widget size stable based on node's current width
+                      // Keep widget size stable based on node's current width, dynamic height based on button wrap
                       const width = node.size ? Math.max(350, node.size[0]) : 400;
-                      return [width, 342]; // Fixed height for DOM container (300px list + ~32px buttons + padding)
+                      const btnHeight = buttonContainer.clientHeight || 32;
+                      return [width, 305 + btnHeight + 10]; // Fixed list height (300px) + dynamic buttons height + padding
                   };
                   
                   // Set initial size of the node window
                   if (!node.size || node.size[1] < 100) {
-                      node.size = [400, 440];
+                      node.size = [400, 450];
                   }
                   
                   // Button helper function
@@ -379,6 +381,11 @@ app.registerExtension({
                       return btn;
                   };
  
+                  // Helper to unescape delimiter characters
+                  const unescapeString = (str) => {
+                      return str.replace(/\\n/g, "\n").replace(/\\t/g, "\t").replace(/\\r/g, "\r");
+                  };
+
                   const cleanBtn = createButton("Clean List", () => {
                       const currentText = textWidget.value || "";
                       const newText = formatRenumber(currentText);
@@ -395,6 +402,36 @@ app.registerExtension({
                       }
                       textWidget.value = serializeItems(items);
                       renderList(listContainer, textWidget, node);
+                  });
+
+                  const copyBtn = createButton("Copy Checked", () => {
+                      const currentText = textWidget.value || "";
+                      const items = parseSerializedText(currentText);
+                      const selectedTexts = items.filter(item => item.checked).map(item => item.text.trim()).filter(Boolean);
+                      
+                      const separatorWidget = node.widgets.find(w => w.name === "separator");
+                      const rawSeparator = separatorWidget ? separatorWidget.value : ", ";
+                      const unescapedSeparator = unescapeString(rawSeparator);
+                      
+                      const textToCopy = selectedTexts.join(unescapedSeparator);
+                      
+                      const origText = "Copy Checked";
+                      copyBtn.textContent = "Copied!";
+                      copyBtn.style.backgroundColor = "#2b5e2b";
+                      
+                      navigator.clipboard.writeText(textToCopy).then(() => {
+                          setTimeout(() => {
+                              copyBtn.textContent = origText;
+                              copyBtn.style.backgroundColor = "#353535";
+                          }, 1500);
+                      }).catch(err => {
+                          console.error("Failed to copy text: ", err);
+                          copyBtn.textContent = "Error!";
+                          setTimeout(() => {
+                              copyBtn.textContent = origText;
+                              copyBtn.style.backgroundColor = "#353535";
+                          }, 1500);
+                      });
                   });
  
                   const checkAllBtn = createButton("Check All", () => {
@@ -415,6 +452,7 @@ app.registerExtension({
  
                   buttonContainer.appendChild(cleanBtn);
                   buttonContainer.appendChild(deleteBtn);
+                  buttonContainer.appendChild(copyBtn);
                   buttonContainer.appendChild(checkAllBtn);
                   buttonContainer.appendChild(uncheckAllBtn);
                   
