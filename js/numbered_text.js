@@ -350,7 +350,7 @@ app.registerExtension({
                 parentContainer.style.display = "flex";
                 parentContainer.style.flexDirection = "column";
                 parentContainer.style.width = "100%";
-                parentContainer.style.backgroundColor = "#151515";
+                parentContainer.style.backgroundColor = "transparent";
                 parentContainer.style.border = "1px solid #333";
                 parentContainer.style.borderRadius = "4px";
                 parentContainer.style.marginTop = "5px";
@@ -364,6 +364,9 @@ app.registerExtension({
                 listContainer.style.overflowY = "auto";
                 listContainer.style.height = "300px";
                 listContainer.style.maxHeight = "300px";
+                listContainer.style.backgroundColor = "#151515";
+                listContainer.style.borderTopLeftRadius = "4px";
+                listContainer.style.borderTopRightRadius = "4px";
 
                 // Create horizontal button container
                 const buttonContainer = document.createElement("div");
@@ -374,7 +377,7 @@ app.registerExtension({
                 buttonContainer.style.padding = "5px";
                 buttonContainer.style.gap = "4px";
                 buttonContainer.style.borderTop = "1px solid #333";
-                buttonContainer.style.backgroundColor = "#202020";
+                buttonContainer.style.backgroundColor = "transparent";
 
                 // Stop mouse/pointer/keyboard event propagation to prevent canvas interactions/collapsing
                 const blockEvents = ["mousedown", "mouseup", "click", "dblclick", "contextmenu", "pointerdown", "pointerup", "pointermove", "keydown", "keyup", "keypress"];
@@ -388,12 +391,15 @@ app.registerExtension({
                 const swapRow = document.createElement("div");
                 swapRow.style.display = "flex";
                 swapRow.style.flexDirection = "row";
+                swapRow.style.flexWrap = "wrap";
                 swapRow.style.alignItems = "center";
                 swapRow.style.justifyContent = "center";
                 swapRow.style.padding = "5px 8px";
                 swapRow.style.gap = "8px";
                 swapRow.style.borderTop = "1px solid #333";
-                swapRow.style.backgroundColor = "#181818";
+                swapRow.style.backgroundColor = "transparent";
+                swapRow.style.borderBottomLeftRadius = "4px";
+                swapRow.style.borderBottomRightRadius = "4px";
 
                 // Helper to create styled stepper
                 const createStepper = (inputClass) => {
@@ -410,14 +416,26 @@ app.registerExtension({
                     decBtn.style.display = "inline-flex";
                     decBtn.style.alignItems = "center";
                     decBtn.style.justifyContent = "center";
-                    decBtn.style.backgroundColor = "#353535";
-                    decBtn.style.border = "1px solid #555";
+                    decBtn.style.backgroundColor = "#27272a";
+                    decBtn.style.border = "1px solid #3f3f46";
                     decBtn.style.borderRadius = "2px";
-                    decBtn.style.color = "#eee";
+                    decBtn.style.color = "#a1a1aa";
                     decBtn.style.fontSize = "10px";
                     decBtn.style.cursor = "pointer";
                     decBtn.style.padding = "0";
                     decBtn.style.lineHeight = "1";
+                    decBtn.style.transition = "background 0.15s, border-color 0.15s, color 0.15s";
+
+                    decBtn.addEventListener("mouseover", () => {
+                        decBtn.style.backgroundColor = "rgba(16, 185, 129, 0.12)";
+                        decBtn.style.borderColor = "#10b981";
+                        decBtn.style.color = "#34d399";
+                    });
+                    decBtn.addEventListener("mouseout", () => {
+                        decBtn.style.backgroundColor = "#27272a";
+                        decBtn.style.borderColor = "#3f3f46";
+                        decBtn.style.color = "#a1a1aa";
+                    });
 
                     const input = document.createElement("input");
                     input.className = inputClass;
@@ -443,14 +461,26 @@ app.registerExtension({
                     incBtn.style.display = "inline-flex";
                     incBtn.style.alignItems = "center";
                     incBtn.style.justifyContent = "center";
-                    incBtn.style.backgroundColor = "#353535";
-                    incBtn.style.border = "1px solid #555";
+                    incBtn.style.backgroundColor = "#27272a";
+                    incBtn.style.border = "1px solid #3f3f46";
                     incBtn.style.borderRadius = "2px";
-                    incBtn.style.color = "#eee";
+                    incBtn.style.color = "#a1a1aa";
                     incBtn.style.fontSize = "10px";
                     incBtn.style.cursor = "pointer";
                     incBtn.style.padding = "0";
                     incBtn.style.lineHeight = "1";
+                    incBtn.style.transition = "background 0.15s, border-color 0.15s, color 0.15s";
+
+                    incBtn.addEventListener("mouseover", () => {
+                        incBtn.style.backgroundColor = "rgba(16, 185, 129, 0.12)";
+                        incBtn.style.borderColor = "#10b981";
+                        incBtn.style.color = "#34d399";
+                    });
+                    incBtn.addEventListener("mouseout", () => {
+                        incBtn.style.backgroundColor = "#27272a";
+                        incBtn.style.borderColor = "#3f3f46";
+                        incBtn.style.color = "#a1a1aa";
+                    });
 
                     decBtn.addEventListener("click", () => {
                         let val = parseInt(input.value, 10);
@@ -506,24 +536,29 @@ app.registerExtension({
 
                 const swapBtn = document.createElement("button");
                 swapBtn.textContent = "Swap";
-                swapBtn.style.backgroundColor = "#353535";
-                swapBtn.style.border = "1px solid #555";
+                swapBtn.style.backgroundColor = "#27272a";
+                swapBtn.style.border = "1px solid #3f3f46";
                 swapBtn.style.borderRadius = "3px";
-                swapBtn.style.color = "#ddd";
+                swapBtn.style.color = "#a1a1aa";
                 swapBtn.style.padding = "3px 12px";
                 swapBtn.style.fontSize = "10px";
                 swapBtn.style.fontFamily = "sans-serif";
                 swapBtn.style.cursor = "pointer";
                 swapBtn.style.marginLeft = "4px";
+                swapBtn.style.transition = "background 0.15s, border-color 0.15s, color 0.15s";
 
                 swapBtn.addEventListener("mouseover", () => {
-                    swapBtn.style.backgroundColor = "#454545";
-                    swapBtn.style.color = "#fff";
+                    if (swapBtn.style.backgroundColor !== "rgb(43, 94, 43)" && swapBtn.style.backgroundColor !== "rgb(150, 40, 40)") {
+                        swapBtn.style.backgroundColor = "rgba(16, 185, 129, 0.12)";
+                        swapBtn.style.borderColor = "#10b981";
+                        swapBtn.style.color = "#34d399";
+                    }
                 });
                 swapBtn.addEventListener("mouseout", () => {
                     if (swapBtn.style.backgroundColor !== "rgb(43, 94, 43)" && swapBtn.style.backgroundColor !== "rgb(150, 40, 40)") {
-                        swapBtn.style.backgroundColor = "#353535";
-                        swapBtn.style.color = "#ddd";
+                        swapBtn.style.backgroundColor = "#27272a";
+                        swapBtn.style.borderColor = "#3f3f46";
+                        swapBtn.style.color = "#a1a1aa";
                     }
                 });
 
@@ -541,8 +576,9 @@ app.registerExtension({
                         swapBtn.style.color = "#fff";
                         setTimeout(() => {
                             swapBtn.textContent = "Swap";
-                            swapBtn.style.backgroundColor = "#353535";
-                            swapBtn.style.color = "#ddd";
+                            swapBtn.style.backgroundColor = "#27272a";
+                            swapBtn.style.borderColor = "#3f3f46";
+                            swapBtn.style.color = "#a1a1aa";
                         }, 1000);
                         return;
                     }
@@ -568,8 +604,9 @@ app.registerExtension({
 
                     setTimeout(() => {
                         swapBtn.textContent = "Swap";
-                        swapBtn.style.backgroundColor = "#353535";
-                        swapBtn.style.color = "#ddd";
+                        swapBtn.style.backgroundColor = "#27272a";
+                        swapBtn.style.borderColor = "#3f3f46";
+                        swapBtn.style.color = "#a1a1aa";
                     }, 1000);
                 });
 
@@ -614,8 +651,8 @@ app.registerExtension({
                 swapRow.appendChild(sepInput);
 
                 parentContainer.appendChild(listContainer);
-                parentContainer.appendChild(swapRow);
                 parentContainer.appendChild(buttonContainer);
+                parentContainer.appendChild(swapRow);
 
                 const domWidget = node.addDOMWidget("custom_numbered_text", "custom_ui", parentContainer);
                 domWidget.computeSize = function () {
@@ -636,24 +673,27 @@ app.registerExtension({
                     const btn = document.createElement("button");
                     btn.textContent = text;
                     btn.style.flex = "1";
-                    btn.style.backgroundColor = "#353535";
-                    btn.style.border = "1px solid #555";
+                    btn.style.backgroundColor = "#27272a";
+                    btn.style.border = "1px solid #3f3f46";
                     btn.style.borderRadius = "3px";
-                    btn.style.color = "#ddd";
+                    btn.style.color = "#a1a1aa";
                     btn.style.padding = "4px 2px";
                     btn.style.fontSize = "9.5px";
                     btn.style.fontFamily = "sans-serif";
                     btn.style.cursor = "pointer";
                     btn.style.whiteSpace = "nowrap";
                     btn.style.textAlign = "center";
+                    btn.style.transition = "background 0.15s, border-color 0.15s, color 0.15s";
 
                     btn.addEventListener("mouseover", () => {
-                        btn.style.backgroundColor = "#454545";
-                        btn.style.color = "#fff";
+                        btn.style.backgroundColor = "rgba(16, 185, 129, 0.12)";
+                        btn.style.borderColor = "#10b981";
+                        btn.style.color = "#34d399";
                     });
                     btn.addEventListener("mouseout", () => {
-                        btn.style.backgroundColor = "#353535";
-                        btn.style.color = "#ddd";
+                        btn.style.backgroundColor = "#27272a";
+                        btn.style.borderColor = "#3f3f46";
+                        btn.style.color = "#a1a1aa";
                     });
                     btn.addEventListener("click", onClick);
                     return btn;
