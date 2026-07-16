@@ -9,7 +9,7 @@ NODE_CLASS_MAPPINGS = {
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "NumberedText": "DEPRECATED - REPLACE",
+    "NumberedText": "NumberedText - DEPRECATED - REPLACE",
     "dehypnotic_NumberedText": "NumberedText (Dehypnotic)"
 }
 
