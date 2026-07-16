@@ -9,7 +9,7 @@ NODE_CLASS_MAPPINGS = {
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "NumberedText": DEPRECATED - REPLACE",
+    "NumberedText": "DEPRECATED - REPLACE",
     "dehypnotic_NumberedText": "NumberedText (Dehypnotic)"
 }
 
@@ -17,4 +17,3 @@ NODE_DISPLAY_NAME_MAPPINGS = {
 WEB_DIRECTORY = "./js"
 
 __all__ = ["NODE_CLASS_MAPPINGS", "NODE_DISPLAY_NAME_MAPPINGS", "WEB_DIRECTORY"]
-from .numbered_text_node import NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS
