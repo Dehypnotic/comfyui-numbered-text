@@ -78,14 +78,6 @@ function serializeItems(items) {
     }).join("\n");
 }
 
-function formatRenumber(text) {
-    const items = parseSerializedText(text);
-    for (let item of items) {
-        // Strip any leading standard numbers inside the text area input
-        item.text = item.text.replace(/^\s*\d+\.\s*/, "").trim();
-    }
-    return serializeItems(items);
-}
 
 function renderList(container, textWidget, node) {
     // Clean up old resize observers to prevent memory leaks
@@ -227,6 +219,34 @@ function renderList(container, textWidget, node) {
                             }
                         }
                     }, 10);
+                }
+            } else if (event.key === "ArrowUp") {
+                const firstNewline = textarea.value.indexOf("\n");
+                if (firstNewline === -1 || textarea.selectionStart <= firstNewline) {
+                    event.preventDefault();
+                    const prevRow = container.children[index - 1];
+                    if (prevRow) {
+                        const prevTextarea = prevRow.querySelector("textarea");
+                        if (prevTextarea) {
+                            prevTextarea.focus();
+                            const len = prevTextarea.value.length;
+                            prevTextarea.setSelectionRange(len, len);
+                        }
+                    }
+                }
+            } else if (event.key === "ArrowDown") {
+                const lastNewline = textarea.value.lastIndexOf("\n");
+                if (lastNewline === -1 || textarea.selectionStart > lastNewline) {
+                    event.preventDefault();
+                    const nextRow = container.children[index + 1];
+                    if (nextRow) {
+                        const nextTextarea = nextRow.querySelector("textarea");
+                        if (nextTextarea) {
+                            nextTextarea.focus();
+                            const len = nextTextarea.value.length;
+                            nextTextarea.setSelectionRange(len, len);
+                        }
+                    }
                 }
             }
         });
@@ -386,13 +406,6 @@ app.registerExtension({
                       return str.replace(/\\n/g, "\n").replace(/\\t/g, "\t").replace(/\\r/g, "\r");
                   };
 
-                  const cleanBtn = createButton("Clean List", () => {
-                      const currentText = textWidget.value || "";
-                      const newText = formatRenumber(currentText);
-                      textWidget.value = newText;
-                      renderList(listContainer, textWidget, node);
-                  });
-                  
                   const deleteBtn = createButton("Delete Checked", () => {
                       const currentText = textWidget.value || "";
                       let items = parseSerializedText(currentText);
@@ -450,7 +463,6 @@ app.registerExtension({
                       renderList(listContainer, textWidget, node);
                   });
  
-                  buttonContainer.appendChild(cleanBtn);
                   buttonContainer.appendChild(deleteBtn);
                   buttonContainer.appendChild(copyBtn);
                   buttonContainer.appendChild(checkAllBtn);
