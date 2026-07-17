@@ -419,7 +419,7 @@ app.registerExtension({
                     decBtn.style.backgroundColor = "#27272a";
                     decBtn.style.border = "1px solid #3f3f46";
                     decBtn.style.borderRadius = "2px";
-                    decBtn.style.color = "#a1a1aa";
+                    decBtn.style.color = "#34d399";
                     decBtn.style.fontSize = "10px";
                     decBtn.style.cursor = "pointer";
                     decBtn.style.padding = "0";
@@ -434,7 +434,7 @@ app.registerExtension({
                     decBtn.addEventListener("mouseout", () => {
                         decBtn.style.backgroundColor = "#27272a";
                         decBtn.style.borderColor = "#3f3f46";
-                        decBtn.style.color = "#a1a1aa";
+                        decBtn.style.color = "#34d399";
                     });
 
                     const input = document.createElement("input");
@@ -464,7 +464,7 @@ app.registerExtension({
                     incBtn.style.backgroundColor = "#27272a";
                     incBtn.style.border = "1px solid #3f3f46";
                     incBtn.style.borderRadius = "2px";
-                    incBtn.style.color = "#a1a1aa";
+                    incBtn.style.color = "#34d399";
                     incBtn.style.fontSize = "10px";
                     incBtn.style.cursor = "pointer";
                     incBtn.style.padding = "0";
@@ -479,7 +479,7 @@ app.registerExtension({
                     incBtn.addEventListener("mouseout", () => {
                         incBtn.style.backgroundColor = "#27272a";
                         incBtn.style.borderColor = "#3f3f46";
-                        incBtn.style.color = "#a1a1aa";
+                        incBtn.style.color = "#34d399";
                     });
 
                     decBtn.addEventListener("click", () => {
@@ -539,7 +539,7 @@ app.registerExtension({
                 swapBtn.style.backgroundColor = "#27272a";
                 swapBtn.style.border = "1px solid #3f3f46";
                 swapBtn.style.borderRadius = "3px";
-                swapBtn.style.color = "#a1a1aa";
+                swapBtn.style.color = "#34d399";
                 swapBtn.style.padding = "3px 12px";
                 swapBtn.style.fontSize = "10px";
                 swapBtn.style.fontFamily = "sans-serif";
@@ -558,7 +558,7 @@ app.registerExtension({
                     if (swapBtn.style.backgroundColor !== "rgb(43, 94, 43)" && swapBtn.style.backgroundColor !== "rgb(150, 40, 40)") {
                         swapBtn.style.backgroundColor = "#27272a";
                         swapBtn.style.borderColor = "#3f3f46";
-                        swapBtn.style.color = "#a1a1aa";
+                        swapBtn.style.color = "#34d399";
                     }
                 });
 
@@ -676,7 +676,7 @@ app.registerExtension({
                     btn.style.backgroundColor = "#27272a";
                     btn.style.border = "1px solid #3f3f46";
                     btn.style.borderRadius = "3px";
-                    btn.style.color = "#a1a1aa";
+                    btn.style.color = "#34d399";
                     btn.style.padding = "4px 2px";
                     btn.style.fontSize = "9.5px";
                     btn.style.fontFamily = "sans-serif";
@@ -693,7 +693,7 @@ app.registerExtension({
                     btn.addEventListener("mouseout", () => {
                         btn.style.backgroundColor = "#27272a";
                         btn.style.borderColor = "#3f3f46";
-                        btn.style.color = "#a1a1aa";
+                        btn.style.color = "#34d399";
                     });
                     btn.addEventListener("click", onClick);
                     return btn;
@@ -729,18 +729,23 @@ app.registerExtension({
                     const origText = "Copy Checked";
                     copyBtn.textContent = "Copied!";
                     copyBtn.style.backgroundColor = "#2b5e2b";
+                    copyBtn.style.color = "#fff";
 
                     navigator.clipboard.writeText(textToCopy).then(() => {
                         setTimeout(() => {
                             copyBtn.textContent = origText;
-                            copyBtn.style.backgroundColor = "#353535";
+                            copyBtn.style.backgroundColor = "#27272a";
+                            copyBtn.style.color = "#34d399";
                         }, 1500);
                     }).catch(err => {
                         console.error("Failed to copy text: ", err);
                         copyBtn.textContent = "Error!";
+                        copyBtn.style.backgroundColor = "#962828";
+                        copyBtn.style.color = "#fff";
                         setTimeout(() => {
                             copyBtn.textContent = origText;
-                            copyBtn.style.backgroundColor = "#353535";
+                            copyBtn.style.backgroundColor = "#27272a";
+                            copyBtn.style.color = "#34d399";
                         }, 1500);
                     });
                 });
