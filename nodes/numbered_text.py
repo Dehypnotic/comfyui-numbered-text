@@ -2,6 +2,8 @@ from __future__ import annotations
 import re
 from typing import Tuple, List
 
+CATEGORY = "🧘 Dehypnotic/📝 Text Utils"
+
 def _norm(s: str) -> str:
     return s.replace("\r\n", "\n").replace("\r", "\n")
 
