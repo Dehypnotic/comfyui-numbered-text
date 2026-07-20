@@ -10,7 +10,7 @@ NODE_CLASS_MAPPINGS = {
 
 NODE_DISPLAY_NAME_MAPPINGS = {
     "NumberedText": "NumberedText - DEPRECATED - REPLACE",
-    "dehypnotic_NumberedText": "🧘NumberedText (Dehypnotic)"
+    "dehypnotic_NumberedText": "🧘 NumberedText (Dehypnotic)"
 }
 
 # 3. Forteller ComfyUI hvor den nye JavaScript-magien din ligger
