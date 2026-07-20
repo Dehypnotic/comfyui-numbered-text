@@ -56,6 +56,17 @@ def _get_joined_text(text: str, separator: str = "\n") -> str:
     return separator.join(selected_blocks)
 
 class NumberedText:
+    DESCRIPTION = (
+        "Pressing Enter creates a new text associated with the next number in the 
+        "sequence. Use Shift + Enter to create a new line within the same text. 
+        "Only checkmarked texts will be sent to output during execution, separated 
+        "by the separator at the bottom right if several. The cursor may be moved up"
+        "and down the sequence with the arrow keys. Swap the content of any two numbers 
+        "at the bottom"
+        ""
+        "If you still got the node with the deprecated ID, replace it with the new one"
+        "since the old will be removed."
+    )
     @classmethod
     def INPUT_TYPES(cls):
         return {
