@@ -85,7 +85,7 @@ class NumberedText:
     RETURN_TYPES = ("STRING",)
     RETURN_NAMES = ("text",)
     FUNCTION = "run"
-    CATEGORY = "🧘 Dehypnotic/📝 Text Utils"
+    CATEGORY = "Dehypnotic/📝 Text Utils"
 
     def run(self, text: str, separator: str) -> Tuple[str]:
         unescaped_separator = _unescape(separator)
